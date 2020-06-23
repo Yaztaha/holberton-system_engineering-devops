@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Kills the previous task
+pkill -SIGKILL -f "7-highlander"
