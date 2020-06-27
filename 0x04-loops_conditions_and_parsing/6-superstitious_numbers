@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20, prints "4" and "bad luck from China" at 4th iteration, "9" and "bad luck from Japan" at 9th iteration and finally "17" and "bad luck from Italy" at 17th iteration
+x=0
+while [ $x -lt 20 ]
+do
+	echo "$x"
+	case $x in
+	     4 )
+	       echo "bad luck from China";;
+	     9 )
+	       echo "bad luck from Japan";;
+	     17 )
+	     	echo "bad luck from Italy";;
+	esac
+	x=$((x + 1))
+done
