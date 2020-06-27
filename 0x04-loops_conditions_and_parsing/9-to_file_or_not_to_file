@@ -6,9 +6,9 @@ if [ -e "$filename" ]
 	echo "$filename file exists"
 	if [ -s $filename ]
 	then
-		echo "$filename is not empty"
+		echo "$filename file is not empty"
 	else
-		echo "$filename is empty"
+		echo "$filename file is empty"
 	fi
 	if [ -f $filename ]
 	then
