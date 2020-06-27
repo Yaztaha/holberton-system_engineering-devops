@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script write "Holberton School" 10 times but in the 9th iteration prints "Hi"
+x=0
+while [ $x -lt 10 ]
+do
+	if [ $x = 8 ]
+	then
+		echo "Holberton School"
+		echo "Hi"
+	else
+		echo "Holberton School"
+	fi
+	x=$((x + 1))
+done
