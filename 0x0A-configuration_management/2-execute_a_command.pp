@@ -1,4 +1,4 @@
 # Create a manifest that kills a process named killmenow
-exex { 'killmenow':
+exec { 'killmenow':
   command => XS'pkill -f killmenow'
 }
