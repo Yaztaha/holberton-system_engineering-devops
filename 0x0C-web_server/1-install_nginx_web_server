@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# installs nginx listening on port 80 with a response message when curled
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
-service nginx restart
