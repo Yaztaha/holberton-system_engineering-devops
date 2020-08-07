@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configures an ubuntu server to have nginx installed and listening in port 80
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo service nginx start
+
+sudo sed -n -i 'p;19a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
+sudo service nginx restart
