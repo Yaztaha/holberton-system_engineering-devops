@@ -7,5 +7,5 @@ sudo service nginx start
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/error_404.html
 config="\\\terror_page 404 /error_404.html;"
 configloc="\n\tlocation = /error_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
-sed -i "19a $config$configloc" /etc/nginx/sites-enabled/default
+sudo sed -i "19a $config$configloc" /etc/nginx/sites-enabled/default
 sudo service nginx restart
