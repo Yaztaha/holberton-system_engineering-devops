@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Bash script to make web-02 & web-01 servers identical
+
+sudo apt-get update
+sudo apt-get install Nginx -y
+sudo sed -i "s/^\(\slocation \/ {\)$/\1\n\t\tadd_header X-Served-By: $HOSTNAME;/" /etc/nginx/sites-available/default
+sudo service nginx restart
