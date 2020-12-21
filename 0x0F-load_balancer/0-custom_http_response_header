@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# task1
+
+sudo apt-get update
