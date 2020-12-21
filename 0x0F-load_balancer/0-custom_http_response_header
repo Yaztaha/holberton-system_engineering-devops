@@ -1,3 +1,11 @@
+
+#!/usr/bin/env bash
+# Server config HAproxy
+
+sudo apt-get -y update
+sudo apt-get install -y nginx
+sudo sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo service nginx start
 #!/usr/bin/env bash
 # task1
 
