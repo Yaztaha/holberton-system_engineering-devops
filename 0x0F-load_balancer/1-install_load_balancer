@@ -1,3 +1,28 @@
 #!/usr/bin/env bash
-#Bash scrip
-sudo apt-get install -y haproxy
+# Install NGINX lb-server
+
+sudo apt-get update
+sudo apt-get upgrate
+sudo apt-get -y install haproxy
+sudo chown -R "$USER":"$USER" /etc/haproxy/*
+sudo chmod -R 755 /etc/haproxy/*
+
+printf %s "
+defaults
+    timeout connect 10s
+    timeout client 30s
+    timeout server 30s
+    log global
+    mode http
+    option httplog
+    maxconn 3000
+frontend haproxynode
+    bind *:80
+    mode http
+    default_backend  fd
+backend fd
+    balance roundrobin
+        server 1418-web-01 34.75.188.47:80 check
+        server 1418-web-02 35.237.1.225:80 check
+"        > /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
